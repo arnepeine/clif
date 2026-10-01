@@ -1,0 +1,112 @@
+{
+  "n": 64,
+  "metrics": {
+    "top1_accuracy": 0.8545,
+    "top5_recall": 1.0,
+    "candidate_recall@32": 1.0,
+    "candidate_recall@20_offered_to_reranker": 1.0,
+    "reranking_accuracy_given_present": 0.9818,
+    "mapping_accuracy_given_present": 0.8545,
+    "no_match_accuracy": 0.5,
+    "ambiguity_accuracy": 1.0,
+    "insufficient_information_accuracy": 1.0,
+    "wrong_match_rate": 0.0,
+    "semantic_category_accuracy": 0.7818,
+    "context_attribute_accuracy": 1.0,
+    "latency_ms": {
+      "p50": 15.27,
+      "p95": 35.43,
+      "p99": 101.01
+    },
+    "counts": {
+      "MATCH": 55,
+      "AMBIGUOUS": 3,
+      "NO_MATCH": 4,
+      "INSUFFICIENT_INFORMATION": 2
+    },
+    "reranker": "heuristic",
+    "snomed_version": "20261001"
+  },
+  "failures": [
+    {
+      "text": "history of myocardial infarction",
+      "expected": "22298006",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "decision_ambiguous",
+      "reason": "reranker_selected_ambiguous"
+    },
+    {
+      "text": "myocardial infarction",
+      "expected": "22298006",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "decision_ambiguous",
+      "reason": "reranker_selected_ambiguous"
+    },
+    {
+      "text": "COPD",
+      "expected": "13645005",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "decision_ambiguous",
+      "reason": "below_match_threshold(0.55<0.6)"
+    },
+    {
+      "text": "chronic obstructive pulmonary disease",
+      "expected": "13645005",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "decision_ambiguous",
+      "reason": "below_match_threshold(0.56<0.6)"
+    },
+    {
+      "text": "type 2 diabetes mellitus",
+      "expected": "44054006",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "decision_ambiguous",
+      "reason": "below_match_threshold(0.55<0.6)"
+    },
+    {
+      "text": "aortic stenosis",
+      "expected": "60573004",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "reranker_selected_ambiguous"
+    },
+    {
+      "text": "deep vein thrombosis",
+      "expected": "128053003",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "decision_ambiguous",
+      "reason": "below_match_threshold(0.60<0.6)"
+    },
+    {
+      "text": "family history of type 2 diabetes mellitus",
+      "expected": "44054006",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "decision_ambiguous",
+      "reason": "below_match_threshold(0.55<0.6)"
+    },
+    {
+      "text": "parking garage level three",
+      "expected_status": "NO_MATCH",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "wrong_status",
+      "reason": "below_match_threshold(0.55<0.6)"
+    },
+    {
+      "text": "please call the family tomorrow",
+      "expected_status": "NO_MATCH",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "wrong_status",
+      "reason": "below_match_threshold(0.54<0.6)"
+    }
+  ]
+}

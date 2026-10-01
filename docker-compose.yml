@@ -1,0 +1,67 @@
+# Clif + (optional) Laya, fully on-prem.
+#
+#   cp .env.example .env
+#   docker compose up -d                       # Clif API only (heuristic reranker)
+#   docker compose --profile laya up -d        # Clif + laya-serve; set CLIF_RERANKER=laya in .env
+#
+#   docker compose run --rm clif python -m clif.import_rf2 /data/rf2/SnomedCT_InternationalRF2_PRODUCTION_...
+#   docker compose run --rm clif python -m clif.build_index
+#   curl -s localhost:8000/map -H 'content-type: application/json' -d '{"text": "acute appendicitis"}'
+#
+# The API starts without an index and reports "not_ready" on /health; it picks up the
+# index on the first request after build_index has run.
+services:
+  clif:
+    build:
+      context: .
+      args:
+        CLIF_EXTRAS: "${CLIF_EXTRAS:-}"
+    image: clif:0.1.0
+    env_file: .env
+    environment:
+      CLIF_DATA_DIR: /data
+    volumes:
+      - ./data:/data
+    ports:
+      # Loopback by default: the API has no authentication of its own. Put it behind the
+      # hospital's reverse proxy / API gateway before exposing it.
+      - "${CLIF_BIND_ADDRESS:-127.0.0.1}:${CLIF_PORT:-8000}:8000"
+    restart: unless-stopped
+    init: true
+
+  # Laya constrained-choice reranker (https://github.com/NandhaKishorM/laya), built from the
+  # pinned release tag. Reachable only on the compose network, not from the host.
+  laya:
+    profiles: ["laya"]
+    build:
+      context: https://github.com/NandhaKishorM/laya.git#v0.3.21
+      args:
+        TORCH_INDEX: "${LAYA_TORCH_INDEX:-cpu}"
+    command: ["laya-serve"]
+    environment:
+      LAYA_HOST: 0.0.0.0
+      LAYA_PORT: "8000"
+      LAYA_DEVICE: "${LAYA_DEVICE:-cpu}"
+      LAYA_PRELOAD: "${LAYA_PRELOAD:-1}"
+      LAYA_MODELS: "${LAYA_MODELS:-english,multilingual}"
+      LAYA_THREADS: "${LAYA_THREADS:-4}"
+      LAYA_API_KEY: "${CLIF_LAYA_API_KEY:-}"
+      LAYA_MAX_TOKEN_BUDGET: "2048"
+      # After the first start has downloaded the weights into the volume, set
+      # HF_HUB_OFFLINE=1 so the container never contacts the internet again.
+      HF_HUB_OFFLINE: "${HF_HUB_OFFLINE:-0}"
+    volumes:
+      - laya-models:/home/laya/.cache/huggingface
+    expose:
+      - "8000"
+    restart: unless-stopped
+    init: true
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=4)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10m
+
+volumes:
+  laya-models:

@@ -1,0 +1,232 @@
+{
+  "n": 64,
+  "metrics": {
+    "top1_accuracy": 0.5636,
+    "top5_recall": 0.9636,
+    "candidate_recall@32": 1.0,
+    "candidate_recall@20_offered_to_reranker": 1.0,
+    "reranking_accuracy_given_present": 0.8182,
+    "mapping_accuracy_given_present": 0.5636,
+    "no_match_accuracy": 0.75,
+    "ambiguity_accuracy": 1.0,
+    "insufficient_information_accuracy": 1.0,
+    "wrong_match_rate": 0.0156,
+    "semantic_category_accuracy": 0.7818,
+    "context_attribute_accuracy": 1.0,
+    "latency_ms": {
+      "p50": 92.42,
+      "p95": 142.94,
+      "p99": 652.64
+    },
+    "counts": {
+      "MATCH": 55,
+      "AMBIGUOUS": 3,
+      "NO_MATCH": 4,
+      "INSUFFICIENT_INFORMATION": 2
+    },
+    "reranker": "laya-local",
+    "snomed_version": "20261001"
+  },
+  "failures": [
+    {
+      "text": "patient has severe pain in the right lower abdomen",
+      "expected": "301754002",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "below_match_threshold(0.44<0.6)"
+    },
+    {
+      "text": "atrial fibrilation",
+      "expected": "49436004",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "decision_ambiguous",
+      "reason": "below_match_threshold(0.53<0.6)"
+    },
+    {
+      "text": "appendectomy",
+      "expected": "80146002",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "top_confidence_below_no_match_threshold(0.22<0.3)"
+    },
+    {
+      "text": "appendicectomy",
+      "expected": "80146002",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "decision_ambiguous",
+      "reason": "below_match_threshold(0.47<0.6)"
+    },
+    {
+      "text": "possible pneumonia",
+      "expected": "233604007",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "decision_ambiguous",
+      "reason": "close_competitors(margin 0.16<0.2)"
+    },
+    {
+      "text": "heart attack",
+      "expected": "22298006",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "below_match_threshold(0.57<0.6)"
+    },
+    {
+      "text": "myocardial infarction",
+      "expected": "22298006",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "decision_ambiguous",
+      "reason": "below_match_threshold(0.59<0.6)"
+    },
+    {
+      "text": "shortness of breath",
+      "expected": "267036007",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "decision_ambiguous",
+      "reason": "below_match_threshold(0.55<0.6)"
+    },
+    {
+      "text": "dyspnea",
+      "expected": "267036007",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "below_match_threshold(0.35<0.6)"
+    },
+    {
+      "text": "dyspnoea",
+      "expected": "267036007",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "top_confidence_below_no_match_threshold(0.27<0.3)"
+    },
+    {
+      "text": "high blood pressure",
+      "expected": "38341003",
+      "got_status": "MATCH",
+      "got": "392570002",
+      "failure": "reranker_wrong_choice",
+      "reason": null
+    },
+    {
+      "text": "hypertension",
+      "expected": "38341003",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "decision_ambiguous",
+      "reason": "below_match_threshold(0.46<0.6)"
+    },
+    {
+      "text": "COPD",
+      "expected": "13645005",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "top_confidence_below_no_match_threshold(0.30<0.3)"
+    },
+    {
+      "text": "pulmonary embolism",
+      "expected": "59282003",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "close_competitors(margin 0.09<0.2)"
+    },
+    {
+      "text": "anemia",
+      "expected": "271737000",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "decision_ambiguous",
+      "reason": "below_match_threshold(0.57<0.6)"
+    },
+    {
+      "text": "pneumonia",
+      "expected": "233604007",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "decision_ambiguous",
+      "reason": "close_competitors(margin 0.16<0.2)"
+    },
+    {
+      "text": "atrial flutter",
+      "expected": "5370000",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "decision_ambiguous",
+      "reason": "close_competitors(margin 0.08<0.2)"
+    },
+    {
+      "text": "aortic stenosis",
+      "expected": "60573004",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "top_confidence_below_no_match_threshold(0.23<0.3)"
+    },
+    {
+      "text": "deep vein thrombosis",
+      "expected": "128053003",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "below_match_threshold(0.40<0.6)"
+    },
+    {
+      "text": "urinary tract infection",
+      "expected": "68566005",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "top_confidence_below_no_match_threshold(0.25<0.3)"
+    },
+    {
+      "text": "AF",
+      "expected": "49436004",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "below_match_threshold(0.52<0.6)"
+    },
+    {
+      "text": "MS",
+      "expected": "24700007",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "decision_ambiguous",
+      "reason": "below_match_threshold(0.54<0.6)"
+    },
+    {
+      "text": "paracetamol",
+      "expected": "387517004",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "top_confidence_below_no_match_threshold(0.22<0.3)"
+    },
+    {
+      "text": "blood pressure",
+      "expected": "75367002",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "decision_ambiguous",
+      "reason": "below_match_threshold(0.56<0.6)"
+    },
+    {
+      "text": "parking garage level three",
+      "expected_status": "NO_MATCH",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "wrong_status",
+      "reason": "below_match_threshold(0.35<0.6)"
+    }
+  ]
+}

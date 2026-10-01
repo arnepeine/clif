@@ -1,0 +1,464 @@
+{
+  "n": 64,
+  "metrics": {
+    "top1_accuracy": 0.0182,
+    "top5_recall": 0.9818,
+    "candidate_recall@32": 1.0,
+    "candidate_recall@20_offered_to_reranker": 1.0,
+    "reranking_accuracy_given_present": 0.6727,
+    "mapping_accuracy_given_present": 0.0182,
+    "no_match_accuracy": 1.0,
+    "ambiguity_accuracy": 1.0,
+    "insufficient_information_accuracy": 1.0,
+    "wrong_match_rate": 0.0,
+    "semantic_category_accuracy": 0.7818,
+    "context_attribute_accuracy": 1.0,
+    "latency_ms": {
+      "p50": 56.44,
+      "p95": 92.51,
+      "p99": 333.49
+    },
+    "counts": {
+      "MATCH": 55,
+      "AMBIGUOUS": 3,
+      "NO_MATCH": 4,
+      "INSUFFICIENT_INFORMATION": 2
+    },
+    "reranker": "laya-local",
+    "snomed_version": "20261001"
+  },
+  "failures": [
+    {
+      "text": "acute appendicitis",
+      "expected": "85189001",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "appendicitis",
+      "expected": "74400008",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "apendicitis",
+      "expected": "74400008",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "patient has severe pain in the right lower abdomen",
+      "expected": "301754002",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "right lower quadrant pain",
+      "expected": "301754002",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "atrial fibrillation",
+      "expected": "49436004",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "atrial fibrilation",
+      "expected": "49436004",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "paroxysmal atrial fibrillation",
+      "expected": "282825002",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "appendectomy",
+      "expected": "80146002",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "appendicectomy",
+      "expected": "80146002",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "no known drug allergies",
+      "expected": "409137002",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "history of myocardial infarction",
+      "expected": "22298006",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "patient denies chest pain",
+      "expected": "29857009",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "no chest pain",
+      "expected": "29857009",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "possible pneumonia",
+      "expected": "233604007",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "heart attack",
+      "expected": "22298006",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "myocardial infarction",
+      "expected": "22298006",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "acute myocardial infarction",
+      "expected": "57054005",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "shortness of breath",
+      "expected": "267036007",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "dyspnea",
+      "expected": "267036007",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "dyspnoea",
+      "expected": "267036007",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "high blood pressure",
+      "expected": "38341003",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "hypertension",
+      "expected": "38341003",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "COPD",
+      "expected": "13645005",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "chronic obstructive pulmonary disease",
+      "expected": "13645005",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "type 2 diabetes mellitus",
+      "expected": "44054006",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "congestive heart failure",
+      "expected": "42343007",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "heart failure",
+      "expected": "84114007",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "pulmonary embolism",
+      "expected": "59282003",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "anaemia",
+      "expected": "271737000",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "anemia",
+      "expected": "271737000",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "fever",
+      "expected": "386661006",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "headache",
+      "expected": "25064002",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "cough",
+      "expected": "49727002",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "asthma",
+      "expected": "195967001",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "pneumonia",
+      "expected": "233604007",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "atrial flutter",
+      "expected": "5370000",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "multiple sclerosis",
+      "expected": "24700007",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "rheumatoid arthritis",
+      "expected": "69896004",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "aortic stenosis",
+      "expected": "60573004",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "pleural effusion",
+      "expected": "60046008",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "deep vein thrombosis",
+      "expected": "128053003",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "urinary tract infection",
+      "expected": "68566005",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "influenza",
+      "expected": "6142004",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "AF",
+      "expected": "49436004",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "MS",
+      "expected": "24700007",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "appendectomy",
+      "expected": "80146002",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "paracetamol",
+      "expected": "387517004",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "acetaminophen",
+      "expected": "387517004",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "amoxicillin",
+      "expected": "372687004",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "family history of type 2 diabetes mellitus",
+      "expected": "44054006",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "heart rate",
+      "expected": "364075005",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "blood pressure",
+      "expected": "75367002",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "body temperature",
+      "expected": "386725007",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "reranker_selected_no_match"
+    }
+  ]
+}

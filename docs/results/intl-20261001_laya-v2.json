@@ -1,0 +1,72 @@
+{
+  "n": 64,
+  "metrics": {
+    "top1_accuracy": 0.9091,
+    "top5_recall": 1.0,
+    "candidate_recall@32": 1.0,
+    "candidate_recall@20_offered_to_reranker": 1.0,
+    "reranking_accuracy_given_present": 0.9636,
+    "mapping_accuracy_given_present": 0.9091,
+    "no_match_accuracy": 1.0,
+    "ambiguity_accuracy": 1.0,
+    "insufficient_information_accuracy": 1.0,
+    "wrong_match_rate": 0.0,
+    "semantic_category_accuracy": 0.7818,
+    "context_attribute_accuracy": 1.0,
+    "latency_ms": {
+      "p50": 52.91,
+      "p95": 85.16,
+      "p99": 321.53
+    },
+    "counts": {
+      "MATCH": 55,
+      "AMBIGUOUS": 3,
+      "NO_MATCH": 4,
+      "INSUFFICIENT_INFORMATION": 2
+    },
+    "reranker": "laya-local",
+    "snomed_version": "20261001"
+  },
+  "failures": [
+    {
+      "text": "patient has severe pain in the right lower abdomen",
+      "expected": "301754002",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "aortic stenosis",
+      "expected": "60573004",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "reranker_wrong_choice",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "influenza",
+      "expected": "6142004",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "AF",
+      "expected": "49436004",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    },
+    {
+      "text": "MS",
+      "expected": "24700007",
+      "got_status": "NO_MATCH",
+      "got": null,
+      "failure": "decision_no_match",
+      "reason": "reranker_selected_no_match"
+    }
+  ]
+}

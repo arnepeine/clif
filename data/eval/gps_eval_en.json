@@ -1,0 +1,268 @@
+[
+ {
+  "text": "acute appendicitis",
+  "expected_concept_id": "85189001"
+ },
+ {
+  "text": "appendicitis",
+  "expected_concept_id": "74400008"
+ },
+ {
+  "text": "apendicitis",
+  "expected_concept_id": "74400008"
+ },
+ {
+  "text": "patient has severe pain in the right lower abdomen",
+  "expected_concept_id": "301754002"
+ },
+ {
+  "text": "right lower quadrant pain",
+  "expected_concept_id": "301754002"
+ },
+ {
+  "text": "atrial fibrillation",
+  "expected_concept_id": "49436004"
+ },
+ {
+  "text": "atrial fibrilation",
+  "expected_concept_id": "49436004"
+ },
+ {
+  "text": "paroxysmal atrial fibrillation",
+  "expected_concept_id": "282825002"
+ },
+ {
+  "text": "appendectomy",
+  "expected_concept_id": "80146002"
+ },
+ {
+  "text": "appendicectomy",
+  "expected_concept_id": "80146002"
+ },
+ {
+  "text": "no known drug allergies",
+  "expected_concept_id": "409137002",
+  "expected_assertion": "ASSERTED"
+ },
+ {
+  "text": "history of myocardial infarction",
+  "expected_concept_id": "22298006",
+  "expected_temporality": "HISTORICAL"
+ },
+ {
+  "text": "patient denies chest pain",
+  "expected_concept_id": "29857009",
+  "expected_assertion": "NEGATED"
+ },
+ {
+  "text": "no chest pain",
+  "expected_concept_id": "29857009",
+  "expected_assertion": "NEGATED"
+ },
+ {
+  "text": "possible pneumonia",
+  "expected_concept_id": "233604007",
+  "expected_certainty": "POSSIBLE"
+ },
+ {
+  "text": "heart attack",
+  "expected_concept_id": "22298006"
+ },
+ {
+  "text": "myocardial infarction",
+  "expected_concept_id": "22298006"
+ },
+ {
+  "text": "acute myocardial infarction",
+  "expected_concept_id": "57054005"
+ },
+ {
+  "text": "shortness of breath",
+  "expected_concept_id": "267036007"
+ },
+ {
+  "text": "dyspnea",
+  "expected_concept_id": "267036007"
+ },
+ {
+  "text": "dyspnoea",
+  "expected_concept_id": "267036007"
+ },
+ {
+  "text": "high blood pressure",
+  "expected_concept_id": "38341003"
+ },
+ {
+  "text": "hypertension",
+  "expected_concept_id": "38341003"
+ },
+ {
+  "text": "COPD",
+  "expected_concept_id": "13645005"
+ },
+ {
+  "text": "chronic obstructive pulmonary disease",
+  "expected_concept_id": "13645005"
+ },
+ {
+  "text": "type 2 diabetes mellitus",
+  "expected_concept_id": "44054006"
+ },
+ {
+  "text": "congestive heart failure",
+  "expected_concept_id": "42343007"
+ },
+ {
+  "text": "heart failure",
+  "expected_concept_id": "84114007"
+ },
+ {
+  "text": "pulmonary embolism",
+  "expected_concept_id": "59282003"
+ },
+ {
+  "text": "anaemia",
+  "expected_concept_id": "271737000"
+ },
+ {
+  "text": "anemia",
+  "expected_concept_id": "271737000"
+ },
+ {
+  "text": "fever",
+  "expected_concept_id": "386661006"
+ },
+ {
+  "text": "headache",
+  "expected_concept_id": "25064002"
+ },
+ {
+  "text": "cough",
+  "expected_concept_id": "49727002"
+ },
+ {
+  "text": "asthma",
+  "expected_concept_id": "195967001"
+ },
+ {
+  "text": "pneumonia",
+  "expected_concept_id": "233604007"
+ },
+ {
+  "text": "atrial flutter",
+  "expected_concept_id": "5370000"
+ },
+ {
+  "text": "multiple sclerosis",
+  "expected_concept_id": "24700007"
+ },
+ {
+  "text": "rheumatoid arthritis",
+  "expected_concept_id": "69896004"
+ },
+ {
+  "text": "aortic stenosis",
+  "expected_concept_id": "60573004"
+ },
+ {
+  "text": "pleural effusion",
+  "expected_concept_id": "60046008"
+ },
+ {
+  "text": "deep vein thrombosis",
+  "expected_concept_id": "128053003"
+ },
+ {
+  "text": "urinary tract infection",
+  "expected_concept_id": "68566005"
+ },
+ {
+  "text": "influenza",
+  "expected_concept_id": "6142004"
+ },
+ {
+  "text": "AF",
+  "expected_concept_id": "49436004",
+  "context": "ECG demonstrates irregularly irregular rhythm. Previous diagnosis of atrial fibrillation."
+ },
+ {
+  "text": "MS",
+  "expected_concept_id": "24700007",
+  "context": "MRI shows periventricular demyelinating lesions, relapsing course"
+ },
+ {
+  "text": "appendectomy",
+  "expected_concept_id": "80146002",
+  "allowed_hierarchies": [
+   "procedure"
+  ]
+ },
+ {
+  "text": "Staphylococcus aureus",
+  "expected_concept_id": "3092008"
+ },
+ {
+  "text": "paracetamol",
+  "expected_concept_id": "387517004"
+ },
+ {
+  "text": "acetaminophen",
+  "expected_concept_id": "387517004"
+ },
+ {
+  "text": "amoxicillin",
+  "expected_concept_id": "372687004"
+ },
+ {
+  "text": "family history of type 2 diabetes mellitus",
+  "expected_concept_id": "44054006"
+ },
+ {
+  "text": "heart rate",
+  "expected_concept_id": "364075005"
+ },
+ {
+  "text": "blood pressure",
+  "expected_concept_id": "75367002"
+ },
+ {
+  "text": "body temperature",
+  "expected_concept_id": "386725007"
+ },
+ {
+  "text": "MS",
+  "expected_status": "AMBIGUOUS"
+ },
+ {
+  "text": "AF",
+  "expected_status": "AMBIGUOUS"
+ },
+ {
+  "text": "PE",
+  "expected_status": "AMBIGUOUS"
+ },
+ {
+  "text": "the weather is lovely today",
+  "expected_status": "NO_MATCH"
+ },
+ {
+  "text": "xyzzy qwerty",
+  "expected_status": "NO_MATCH"
+ },
+ {
+  "text": "parking garage level three",
+  "expected_status": "NO_MATCH"
+ },
+ {
+  "text": "please call the family tomorrow",
+  "expected_status": "NO_MATCH"
+ },
+ {
+  "text": "history of",
+  "expected_status": "INSUFFICIENT_INFORMATION"
+ },
+ {
+  "text": "no",
+  "expected_status": "INSUFFICIENT_INFORMATION"
+ }
+]

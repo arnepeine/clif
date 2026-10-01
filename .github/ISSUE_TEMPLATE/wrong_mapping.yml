@@ -1,0 +1,53 @@
+name: Wrong mapping
+description: Clif returned the wrong concept or status for a phrase
+labels: [mapping]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Never paste patient data.** Use a short, de-identified phrase that reproduces the problem.
+  - type: input
+    id: phrase
+    attributes:
+      label: Phrase
+      placeholder: "patient denies chest pain"
+    validations:
+      required: true
+  - type: textarea
+    id: request
+    attributes:
+      label: Other request fields
+      description: context, language, allowed_hierarchies, ecl (if used)
+  - type: input
+    id: returned
+    attributes:
+      label: What Clif returned
+      placeholder: "MATCH 1234567 Some concept / NO_MATCH (reason ...)"
+    validations:
+      required: true
+  - type: input
+    id: expected
+    attributes:
+      label: What you expected
+      placeholder: "MATCH 29857009 Chest pain, assertion NEGATED"
+    validations:
+      required: true
+  - type: input
+    id: edition
+    attributes:
+      label: SNOMED edition and version
+      placeholder: "International 20261001 (snomed_version in the response)"
+    validations:
+      required: true
+  - type: dropdown
+    id: judge
+    attributes:
+      label: Judge
+      options: [heuristic, laya, laya-local (fine-tuned), laya-local (base), llm]
+    validations:
+      required: true
+  - type: textarea
+    id: candidates
+    attributes:
+      label: Output of `clif candidates "<phrase>"` (optional)
+      render: text

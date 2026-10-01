@@ -1,0 +1,142 @@
+# Context-sensitive clinical abbreviations.
+#
+# prior:  how often the expansion is meant when no context is available.
+# cues:   words/stems in the surrounding text that support this expansion.
+#
+# An abbreviation is resolved only if one expansion reaches the dominance
+# threshold (CLIF_ABBREVIATION_DOMINANCE, default 0.9) after combining prior
+# and context cues. Otherwise the mapping is returned as AMBIGUOUS.
+
+AF:
+  - expansion: atrial fibrillation
+    prior: 0.8
+    cues: [ecg, ekg, rhythm, irregular, atrial, anticoagula, warfarin, apixaban, rivaroxaban, edoxaban,
+           dabigatran, palpitation, cardioversion, rate control, tachyarrhythm, vorhof, herzrhythmus, flimmern]
+  - expansion: amniotic fluid
+    prior: 0.2
+    cues: [pregnan, amniocentesis, fetal, fetus, gestation, obstetric, oligohydramnios, polyhydramnios,
+           schwanger, fruchtwasser, amnion]
+VHF:
+  - expansion: Vorhofflimmern
+    prior: 1.0
+    language: de
+MI:
+  - expansion: myocardial infarction
+    prior: 0.75
+    cues: [troponin, stemi, nstemi, chest pain, angina, coronary, cath, pci, stent, infarct, st elevation,
+           herzinfarkt, koronar]
+  - expansion: mitral insufficiency
+    prior: 0.25
+    cues: [valve, valvular, echo, murmur, regurgitation, mitral, klappe, insuffizienz]
+PE:
+  - expansion: pulmonary embolism
+    prior: 0.5
+    cues: [ctpa, ct angiogra, d dimer, dvt, thrombo, anticoagula, embol, hypoxi, pleuritic, wells,
+           lungenembolie, heparin]
+  - expansion: physical examination
+    prior: 0.3
+    cues: [exam, auscultation, palpation, inspection, unremarkable, on examination, untersuchung, befund]
+  - expansion: pleural effusion
+    prior: 0.2
+    cues: [pleural, effusion, thoracentesis, pleurocentesis, dullness, erguss, blunting]
+MS:
+  - expansion: multiple sclerosis
+    prior: 0.6
+    cues: [demyelinat, relapsing, optic neuritis, oligoclonal, lesions, gait, neurolog, interferon,
+           natalizumab, ocrelizumab, sklerose, schub]
+  - expansion: mitral stenosis
+    prior: 0.4
+    cues: [valve, valvular, echo, murmur, rheumatic fever, mitral, klappe, stenose]
+RA:
+  - expansion: rheumatoid arthritis
+    prior: 0.6
+    cues: [joint, synovitis, rheumatoid factor, methotrexate, anti ccp, arthritis, morning stiffness,
+           gelenk, rheuma, dmard]
+  - expansion: right atrium
+    prior: 0.25
+    cues: [echo, atrial, dilated, enlarged, chamber, vorhof, ventricle]
+  - expansion: room air
+    prior: 0.15
+    cues: [saturation, spo2, oxygen, o2, sat, sauerstoff, raumluft]
+AS:
+  - expansion: aortic stenosis
+    prior: 0.6
+    cues: [valve, murmur, echo, tavi, tavr, aortic, gradient, systolic, klappe, aorten]
+  - expansion: ankylosing spondylitis
+    prior: 0.4
+    cues: [spine, sacroiliitis, hla b27, back pain, bechterew, spondyl, sacroiliac]
+COPD:
+  - expansion: chronic obstructive pulmonary disease
+    prior: 1.0
+COLD:
+  - expansion: chronic obstructive pulmonary disease
+    prior: 0.5
+    cues: [spirometry, fev1, inhaler, smoker, emphysema]
+  - expansion: common cold
+    prior: 0.5
+    cues: [rhinorrhea, sneez, runny nose, sore throat, viral, erkältung]
+DM:
+  - expansion: diabetes mellitus
+    prior: 0.9
+    cues: [glucose, hba1c, insulin, metformin, glyc, blutzucker]
+  - expansion: dermatomyositis
+    prior: 0.1
+    cues: [muscle weakness, heliotrope, gottron, ck, myositis]
+HTN:
+  - expansion: hypertension
+    prior: 1.0
+CHF:
+  - expansion: congestive heart failure
+    prior: 1.0
+CAD:
+  - expansion: coronary artery disease
+    prior: 1.0
+KHK:
+  - expansion: koronare Herzkrankheit
+    prior: 1.0
+    language: de
+DVT:
+  - expansion: deep vein thrombosis
+    prior: 1.0
+TVT:
+  - expansion: tiefe Venenthrombose
+    prior: 1.0
+    language: de
+UTI:
+  - expansion: urinary tract infection
+    prior: 1.0
+HWI:
+  - expansion: Harnwegsinfekt
+    prior: 1.0
+    language: de
+CABG:
+  - expansion: coronary artery bypass grafting
+    prior: 1.0
+ECG:
+  - expansion: electrocardiogram
+    prior: 1.0
+EKG:
+  - expansion: electrocardiogram
+    prior: 1.0
+SOB:
+  - expansion: shortness of breath
+    prior: 1.0
+CA:
+  - expansion: carcinoma
+    prior: 0.5
+    cues: [tumor, tumour, malignan, metasta, oncolog, biopsy, chemo]
+  - expansion: calcium
+    prior: 0.3
+    cues: [serum, level, mmol, mg dl, electrolyte, hypercalc]
+  - expansion: cardiac arrest
+    prior: 0.2
+    cues: [cpr, resuscitat, asystole, vf, rosc]
+LE:
+  - expansion: Lungenembolie
+    prior: 0.8
+    language: de
+    cues: [ct, d dimer, dyspnoe, thrombose, antikoag, heparin]
+  - expansion: Lupus erythematodes
+    prior: 0.2
+    language: de
+    cues: [ana, dsdna, schmetterlingserythem, rheuma]

@@ -1,0 +1,25 @@
+name: Bug report
+description: Something crashes, errors or behaves differently from the docs
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "**Never paste patient data or SNOMED release files.**"
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Commands, request bodies, configuration (CLIF_* variables)
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      placeholder: "clif 0.1.0, Python 3.12, macOS 16 / Ubuntu 24.04, SNOMED edition"

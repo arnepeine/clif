@@ -1,0 +1,212 @@
+# Cue lexicon for assertion / temporality / certainty / experiencer detection.
+# NegEx/ConText-style: "pre" cues precede the concept, "post" cues follow it.
+# Matching is case-insensitive on word boundaries, longest cue first.
+# Edit freely; changes take effect on service restart.
+
+# Phrases that are conventionally precoordinated in SNOMED CT (situation
+# concepts). With situation_mode=fixed_expressions they are mapped as a whole
+# instead of being split into "negated <concept>".
+fixed_expressions:
+  - no known drug allergies
+  - no known drug allergy
+  - no known allergies
+  - no known allergy
+  - nkda
+  - nka
+  - keine bekannten allergien
+  - keine bekannten arzneimittelallergien
+  - keine bekannte allergie
+  - geen bekende allergieën
+
+negation:
+  pre:
+    - no known
+    - no evidence of
+    - no signs of
+    - no sign of
+    - no history of
+    - negative for
+    - free of
+    - absence of
+    - denies
+    - denied
+    - denying
+    - without
+    - not
+    - "no"
+    - kein anhalt für
+    - kein hinweis auf
+    - kein nachweis von
+    - keine
+    - keinen
+    - keiner
+    - keinem
+    - kein
+    - ohne
+    - nicht
+    - verneint
+    - negativ für
+    - geen
+    - niet
+    - zonder
+    - pas de
+    - sans
+    - absence de
+  post:
+    - was ruled out
+    - is ruled out
+    - ruled out
+    - not present
+    - not seen
+    - absent
+    - wurde ausgeschlossen
+    - ausgeschlossen
+    - nicht nachweisbar
+    - nicht vorhanden
+    - verneint
+    - uitgesloten
+    - exclu
+
+temporality:
+  historical:
+    pre:
+      - past medical history of
+      - past history of
+      - history of
+      - hx of
+      - h/o
+      - pmh
+      - status post
+      - s/p
+      - previous
+      - previously
+      - prior
+      - zustand nach
+      - z.n.
+      - z. n.
+      - st.p.
+      - anamnestisch
+      - früher
+      - frühere
+      - früherer
+      - voorgeschiedenis van
+      - eerder
+      - antécédent de
+      - antécédents de
+    post:
+      - in the past
+      - years ago
+      - in der vorgeschichte
+      - in der anamnese
+  planned:
+    pre:
+      - planned
+      - scheduled for
+      - scheduled
+      - to undergo
+      - geplante
+      - geplanter
+      - geplant
+      - gepland
+    post:
+      - planned
+      - geplant
+
+certainty:
+  possible:
+    pre:
+      - suspicion of
+      - suspected
+      - possible
+      - possibly
+      - questionable
+      - query
+      - may have
+      - might have
+      - could be
+      - rule out
+      - r/o
+      - verdacht auf
+      - v.a.
+      - v. a.
+      - fraglich
+      - fragliche
+      - fraglicher
+      - mögliche
+      - möglicher
+      - möglich
+      - dd
+      - mogelijk
+      - verdenking op
+      - suspicion de
+    post:
+      - cannot be excluded
+      - not excluded
+      - nicht ausgeschlossen
+      - suspected
+  probable:
+    pre:
+      - probable
+      - probably
+      - likely
+      - consistent with
+      - suggestive of
+      - compatible with
+      - wahrscheinlich
+      - vereinbar mit
+      - am ehesten
+      - waarschijnlijk
+    post:
+      - likely
+      - wahrscheinlich
+
+experiencer_family:
+  pre:
+    - family history of
+    - fh of
+    - fhx
+    - familienanamnese
+    - familiär
+    - mother has
+    - father has
+    - mother had
+    - father had
+    - familieanamnese
+
+# Leading filler phrases removed before retrieval (never change assertions).
+fillers:
+  - the patient presents with
+  - patient presents with
+  - presents with
+  - the patient has
+  - patient has
+  - patient with
+  - pt has
+  - pt with
+  - complains of
+  - c/o
+  - diagnosed with
+  - diagnosis of
+  - known
+  - bekannte
+  - bekannter
+  - bekanntes
+  - patient hat
+  - patientin hat
+  - pat. hat
+  - klagt über
+  - diagnose
+  - patiënt heeft
+  - le patient présente
+
+# Scope terminators: a negation/certainty cue does not extend past these.
+terminators:
+  - but
+  - however
+  - although
+  - except
+  - aber
+  - jedoch
+  - außer
+  - maar
+  - mais

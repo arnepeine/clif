@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clif"
+version = "0.1.0"
+description = "Map clinical free text to SNOMED CT: SNOMED-wide retrieval plus a constrained-choice judge that can't invent codes"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "Arne Peine" }]
+keywords = ["snomed-ct", "clinical-nlp", "terminology", "medical-coding", "entity-linking", "laya"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Healthcare Industry",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "Topic :: Text Processing :: Linguistic",
+    "Framework :: FastAPI",
+]
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.27",
+    "pydantic>=2.5",
+    "pydantic-settings>=2.1",
+    "numpy>=1.26",
+    "rapidfuzz>=3.5",
+    "httpx>=0.26",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+# Real multilingual embeddings, loaded from a local model directory (on-prem).
+embeddings = ["sentence-transformers>=2.6"]
+# Laya constrained-choice reranker in-process (reranker = "laya-local").
+laya = ["laya>=0.3.21"]
+# Approximate nearest neighbour search for large vector indexes.
+faiss = ["faiss-cpu>=1.7.4"]
+dev = ["pytest>=8", "pytest-cov"]
+
+[project.urls]
+Homepage = "https://github.com/arnepeine/clif"
+Documentation = "https://github.com/arnepeine/clif/tree/main/docs"
+Issues = "https://github.com/arnepeine/clif/issues"
+Changelog = "https://github.com/arnepeine/clif/blob/main/CHANGELOG.md"
+
+[project.scripts]
+clif = "clif.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["clif*"]
+
+[tool.setuptools.package-data]
+clif = ["resources/*.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

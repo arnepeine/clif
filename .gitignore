@@ -1,0 +1,16 @@
+# Python
+.venv/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+
+# Local configuration
+.env
+
+# SNOMED CT content is licensed and must never be committed:
+# imported releases, search indexes and SNOMED-derived training data.
+data/*
+!data/eval/
+
+# Fine-tuned model weights (trained on SNOMED content, see docs/licensing.md)
+models/

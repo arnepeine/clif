@@ -1,0 +1,144 @@
+{
+  "n": 64,
+  "metrics": {
+    "top1_accuracy": 0.7818,
+    "top5_recall": 0.8909,
+    "candidate_recall@32": 0.8909,
+    "candidate_recall@20_offered_to_reranker": 0.8909,
+    "reranking_accuracy_given_present": 0.9796,
+    "mapping_accuracy_given_present": 0.8776,
+    "no_match_accuracy": 0.5,
+    "ambiguity_accuracy": 1.0,
+    "insufficient_information_accuracy": 1.0,
+    "wrong_match_rate": 0.0625,
+    "semantic_category_accuracy": 0.7818,
+    "context_attribute_accuracy": 1.0,
+    "latency_ms": {
+      "p50": 11.4,
+      "p95": 23.51,
+      "p99": 62.21
+    },
+    "counts": {
+      "MATCH": 55,
+      "AMBIGUOUS": 3,
+      "NO_MATCH": 4,
+      "INSUFFICIENT_INFORMATION": 2
+    },
+    "reranker": "heuristic",
+    "snomed_version": "20260101"
+  },
+  "failures": [
+    {
+      "text": "patient has severe pain in the right lower abdomen",
+      "expected": "301754002",
+      "got_status": "MATCH",
+      "got": "54586004",
+      "failure": "reranker_wrong_choice",
+      "reason": null
+    },
+    {
+      "text": "heart attack",
+      "expected": "22298006",
+      "got_status": "MATCH",
+      "got": "247818001",
+      "failure": "retrieval_miss",
+      "reason": null
+    },
+    {
+      "text": "shortness of breath",
+      "expected": "267036007",
+      "got_status": "MATCH",
+      "got": "135833008",
+      "failure": "retrieval_miss",
+      "reason": null
+    },
+    {
+      "text": "high blood pressure",
+      "expected": "38341003",
+      "got_status": "MATCH",
+      "got": "75367002",
+      "failure": "retrieval_miss",
+      "reason": null
+    },
+    {
+      "text": "hypertension",
+      "expected": "38341003",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "retrieval_miss",
+      "reason": "reranker_selected_ambiguous"
+    },
+    {
+      "text": "COPD",
+      "expected": "13645005",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "decision_ambiguous",
+      "reason": "below_match_threshold(0.58<0.6)"
+    },
+    {
+      "text": "type 2 diabetes mellitus",
+      "expected": "44054006",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "decision_ambiguous",
+      "reason": "below_match_threshold(0.58<0.6)"
+    },
+    {
+      "text": "aortic stenosis",
+      "expected": "60573004",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "decision_ambiguous",
+      "reason": "reranker_selected_ambiguous"
+    },
+    {
+      "text": "pleural effusion",
+      "expected": "60046008",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "decision_ambiguous",
+      "reason": "reranker_selected_ambiguous"
+    },
+    {
+      "text": "deep vein thrombosis",
+      "expected": "128053003",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "retrieval_miss",
+      "reason": "reranker_selected_ambiguous"
+    },
+    {
+      "text": "urinary tract infection",
+      "expected": "68566005",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "retrieval_miss",
+      "reason": "reranker_selected_ambiguous"
+    },
+    {
+      "text": "family history of type 2 diabetes mellitus",
+      "expected": "44054006",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "decision_ambiguous",
+      "reason": "below_match_threshold(0.58<0.6)"
+    },
+    {
+      "text": "parking garage level three",
+      "expected_status": "NO_MATCH",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "wrong_status",
+      "reason": "below_match_threshold(0.53<0.6)"
+    },
+    {
+      "text": "please call the family tomorrow",
+      "expected_status": "NO_MATCH",
+      "got_status": "AMBIGUOUS",
+      "got": null,
+      "failure": "wrong_status",
+      "reason": "reranker_selected_ambiguous"
+    }
+  ]
+}
